@@ -1,0 +1,6 @@
+The code concatenating 2 strings. We recieve pointers to the start of the chars arrays.
+We know that string ends with 0. 
+- At the start of the run we enter 0 to EDX.
+- We iterate over the first array until we encounter 0. It represents the end of the string.
+- Now, we start copying the second string to the end of the first one.
+- We continue the loop until we hit 0 againg and that represents the end of the code.
