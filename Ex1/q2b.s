@@ -11,7 +11,14 @@
 
 my_function:
      # This code reads the first argument from the stack into EBX.
-    MOV EBX, DWORD PTR [ESP + 4]
+    MOV EAX, DWORD PTR [ESP + 4]
+    
+    # We are saving EBX, ESI, EDI in the stack because as mentioned in the Facebook 
+    # group we need to save it's original value.
+    PUSH EBX
+    PUSH ESI
+    PUSH EDI
+    MOV EBX, EAX
     
     # First, we will handle the negative input, a0 and a1.
     CMP EBX, 1
@@ -53,5 +60,8 @@ _IF1:                   # Return 1
     MOV EAX, 1
 
 _FINISH:
+    POP EDI
+    POP ESI
+    POP EBX
     RET
     

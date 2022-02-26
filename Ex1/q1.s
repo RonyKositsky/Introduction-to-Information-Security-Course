@@ -9,7 +9,12 @@
 
 my_function:
     # This code reads the first argument from the stack into EBX.
-    MOV EBX, DWORD PTR [ESP + 4]
+    MOV EAX, DWORD PTR [ESP + 4]
+    
+    # We are saving EBX in the stack because as mentioned in the Facebook 
+    # group we need to save it's original value.
+    PUSH EBX
+    MOV EBX, EAX
 
     #Checks Input. If input <= 0, Return 0. If not, start the loop.
     CMP EBX, 0
@@ -46,6 +51,7 @@ _LOOP_INC:
     MOV EAX, 0
 
 _RETURN:
+    POP EBX
     RET
 
 
