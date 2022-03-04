@@ -1,0 +1,3 @@
+We know that m^e = m^e (mod n).
+We just calculate the e'th root to extract the credit card number. 
+

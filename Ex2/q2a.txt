@@ -1,0 +1,2 @@
+Because we have finite number of pins we just iterate over all the options(brute force approach).
+The cipher is deterministic so we will find the right answer for sure.

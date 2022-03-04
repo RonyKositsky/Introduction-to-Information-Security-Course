@@ -1,0 +1,4 @@
+The difference between the two sections is that we will iterate over n*256 except exponential number of keys.
+We will take only the relevant bytes from the cipher for each key byte. Then we will calculate the maxinum score for 
+each byte and append it to our byte array.
+In the end we will return the cyphered text with our found key.

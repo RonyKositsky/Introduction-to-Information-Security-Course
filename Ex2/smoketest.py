@@ -196,7 +196,7 @@ def smoketest():
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
     with question_context('Questions 1A'):
-        check_q1a('q1.py')
+       check_q1a('q1.py')
 
     with question_context('Questions 1B'):
        check_q1b('q1.py')
@@ -209,9 +209,9 @@ def smoketest():
         check_q1d('q1.py')
         core.smoke.check_if_nonempty('q1d.txt')
 
-    #with question_context('Questions 1E'):
-    #    check_q1e('q1.py')
-    #    core.smoke.check_if_nonempty('q1e.txt')
+    with question_context('Questions 1E'):
+        check_q1e('q1.py')
+        core.smoke.check_if_nonempty('q1e.txt')
 
     with question_context('Questions 2A'):
         check_q2a('q2.py')

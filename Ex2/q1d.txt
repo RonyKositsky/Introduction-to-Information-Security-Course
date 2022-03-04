@@ -1,0 +1,7 @@
+The brute force approach will iterate all possible keys in length n.
+We will have n^256 options which we will iterate over and return the result.
+This is the procedure:
+1. Create all possible keys.
+2. Decrypt it using the keys. 
+3. Calculte its score using the function from last section.
+4. Return the highest score.

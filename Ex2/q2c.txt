@@ -1,0 +1,3 @@
+The approval message content is just 1. Therefore, the signture of this message will be 1 as well.
+We can conclude it from the calculation m^d (mod n), but m = 1. 
+

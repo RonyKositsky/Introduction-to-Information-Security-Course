@@ -1,0 +1,8 @@
+I used this link for my idea https://crypto.stackexchange.com/questions/30209/developing-algorithm-for-detecting-plain-text-via-frequency-analysis.
+
+The idea is to conduct chi squared test against the message we recieved.
+1. We define the probabilities of each letter in the english language.
+2. We are counting the number of instances of letters we recieved.
+3. We calculate the chi squared value and return it.
+
+This way we can estimate how "close" we are to real word. 
