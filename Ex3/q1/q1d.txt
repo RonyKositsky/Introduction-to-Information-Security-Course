@@ -1,0 +1,2 @@
+In the program the comparison is between 0xA and 0x9.
+I changed the offset to get 0x9 and we comparing the same value so it returns true.

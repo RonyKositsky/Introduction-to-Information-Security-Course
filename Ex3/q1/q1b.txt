@@ -1,0 +1,4 @@
+We will "eliminate" the differnce.
+We will calculate the differnce between char 1 and the result.
+We will xor them.
+Add it to the count, and when we will XOR the new number we will get the desired value.

@@ -1,0 +1,5 @@
+This the sequence of our program:
+1.Init variable with the value of 84.
+2.We get the counter N value by the value of the message[0]
+3.We doing a loop N times, each time we calculating res = res ^ message[i+2]
+4.We are checking if the result equals message[1]

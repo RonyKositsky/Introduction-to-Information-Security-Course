@@ -1,0 +1,2 @@
+We changed the return value of the invalid message so it will the program always returning 0.
+

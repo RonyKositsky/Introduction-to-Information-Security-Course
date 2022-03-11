@@ -1,0 +1,7 @@
+I followed the suggested sequence.
+First, I implemented the 2 assembly files in the dead zones. The first one in the small one, and the second in the large one.
+
+- The first dead zone jumps to the second one.
+- The second one checking whether we got '#!' at the start.
+- If so, we are calling _system address.
+- If not, we return to our main function.
