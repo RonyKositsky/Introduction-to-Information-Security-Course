@@ -1,0 +1,10 @@
+I followed the algorithm shown in class and the homework instruction.
+First, let's do some math:
+- We can see that the first ASCII byte in address 0xbfffdfa9.
+- It begins in the offset of 71 bytes, we can calculate it because I found out the epi register value is 0x4e4e4e
+  which is the letter 'N'(we inserted it in the first section).
+- So we want to inject the start of the program and set epi to 0xbfffdfa9.
+- We load the assembly, writing nop silde until byte 67 and the injecting new return address.
+
+Second, our assembly is pretty simple(code documentation inside the code).
+It follows the algorithm we saw with Barak. We are preparing the the command and calling system call.

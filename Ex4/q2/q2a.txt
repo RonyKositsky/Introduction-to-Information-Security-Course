@@ -1,0 +1,3 @@
+We will follow the procedure we have done in the recitation.
+I called sudo with long password in order it to crash - I took several iteration until I found its length :)
+I used the 5 letters method like we saw to easily find it in the GDB.

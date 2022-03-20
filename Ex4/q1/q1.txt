@@ -1,0 +1,12 @@
+I'm calling the sudo password with my password to exploit the vulnerability.
+Lets break the program:
+- First, our password length is 10 as desired.
+- Now, we can dive to the ida code. The stack is built in this order:
+	* auth variable.
+	* buff array.
+	* hash array.
+- We concatenating the array with our password and then checking the hash.
+- If we will write the right password we will set auth variable to 1(right on top of the buffer).
+- When we will put '\' at the end it will not count its length but will include it in the string.
+- In this way we overcome the problem and use the vulnerability.
+

