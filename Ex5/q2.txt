@@ -1,0 +1,5 @@
+- First, I've created a simple .c program which connects to the server. 
+- Then, I opened the compiled code with the IDA and looked how should I program the arguments stack for each syscall.
+- I've located the GOT location for all the relevant syscalls from the server program.
+- Now, we can write our shellcode. I duplicated the code from the c program with the desired arguments.
+- The python program just configurated the message length, shell code + nop slide and return address.

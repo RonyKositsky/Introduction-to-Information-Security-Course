@@ -1,0 +1,5 @@
+I've followed the instructions of the question:
+- I go over the bytes, and each byte the is not ASCII we xor it fith 0xFF. We save the indices and return the new shellcode.
+- We create the basic decoder. We define register EBX as our mask 0xFF and for each index we XOR it with it.
+- We put it all together with our shellcode, we move the stack pointer to the relevant place.
+- We create the shell code and we replace the nop silde(nop is 0x90 which is not ASCII) with replacement instruction which actually does nothing - DEC EDX(0x48 which is ASCII).
