@@ -14,7 +14,7 @@ XOR EBX, EBX;        # EBX = 0.
 MOV BX, 0x3905;      # 0x539 in little endian(port 1337).
 PUSH BX;             # Port.
 MOV BX, 0x0002;      
-PUSH BX              # Family.
+PUSH BX;             # Family.
 MOV ECX, ESP;
 XOR EBX, EBX;
 MOV EBX, 16;
