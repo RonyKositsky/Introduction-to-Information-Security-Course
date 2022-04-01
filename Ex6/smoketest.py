@@ -273,11 +273,12 @@ def smoketest():
         core.smoke.check_if_nonempty('q4.py')
         check_q4()
 
-    #with question_context('Question 5'):
-    #    core.smoke.check_if_nonempty('q5.txt')
-    #    core.smoke.check_if_nonempty('q5.py')
-    #    check_q5()
+    with question_context('Question 5'):
+        core.smoke.check_if_nonempty('q5.txt')
+        core.smoke.check_if_nonempty('q5.py')
+        check_q5()
 
 
 if __name__ == '__main__':
     smoketest()
+

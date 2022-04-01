@@ -26,7 +26,7 @@ EXIT = 0xb7b41990
 
 # Memory address of the start of the `.text` section of `libc`.
 # The code in q2.py will automatically use this.
-LIBC_TEXT_START = 0xb7d49000
+LIBC_TEXT_START = 0xb7b270f0
 
 ########### QUESTION 3 ##############
 

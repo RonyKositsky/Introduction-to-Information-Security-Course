@@ -1,0 +1,9 @@
+Now, when we can find the desired gadgets, we will use it to build the assmebly code we want:
+
+- Start with 135 'A' to fill the buffer.
+- Push auth variable locatin to EDX.
+- Push 1 to EAX.
+- Setting auth = 1.
+- Jumping after the check password function.
+
+Now, the auth variable is equals to 1 so we will get the desired output.

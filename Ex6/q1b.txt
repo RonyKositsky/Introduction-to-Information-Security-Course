@@ -1,0 +1,6 @@
+Now when we know what we are looking for, we can create our message:
+- Fill the buffer with 135 'A'.
+- System syscall address we found with the gdb.
+- The arguments with address to '/bin/sh' string in the file.
+
+We need to put the arguments in offset of 8 bytes because in the first 4 bytes above the function we expect to get the returned address.

@@ -1,0 +1,2 @@
+When we check the sudo file in the ida we can see the buffer that is created.
+When calculating the desired length of the buffer to make it crash we can understand that we need 135 bytes, and then we will get the return address, which we can see in the 4 'B' section we see in the python program.

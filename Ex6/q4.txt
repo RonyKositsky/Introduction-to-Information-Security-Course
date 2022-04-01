@@ -1,0 +1,10 @@
+We will build the infinite loop for our desired printing:
+
+- Start with 135 'A' to fill the buffer.
+- We put the ebp address into EBP register.
+- We call puts and it gets the argument 2 stack above the call in the stack.
+- We increase the ESP to skip above the string address.
+- We use pop to push the ESP to the start of the loop.
+ 
+ 
+It will continue endlessly.
