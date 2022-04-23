@@ -1,0 +1,8 @@
+Now we intercepting the read syscall. We runninng inifinte loop in the .c file to catch all those calls.
+The python code is as before, but simpler - we just need to use the global pid variable to overwrite.
+
+The c program:
+- Forks the process of the malware.
+- Attached to the antivirus process.
+- Intercept read syscall(eax = 3) and modify its operation.
+

@@ -1,0 +1,12 @@
+First we implement the ptrace code and preparing the injection of our code as instructed in the instructions.
+We define 3 global variable, and give them default ASCII values so we will be able to find them and replace them easily.
+
+In the python file we executing it by reading the binary compiled file, and then finding our sequence and replacing the relevent data we want to inject in the desired place.
+We can find it easily because this is the way we defined the global variable. We inject assembly code that returns always 0.
+
+To find the CHECK_IF_VIRUS_CODE I used gdb:
+1. add break point on main.
+2. run it.
+3. print check_if_virus.
+
+We will use this method in the next sections as well.

@@ -1,0 +1,11 @@
+We will use the same sequence, but in differen approach.
+First, the .c file is the same as before. We define the same global variables.
+
+Secondly, we will find the relevant addresses.
+To find the GOT address we will use the command from recitation 5 objdump -D ./antivirus -M intel --section=.plt to find 
+the address of check_if_virus@plt.
+We will use alternative address to switch between them - is_directory function. We will find it with the gdb + break point
+as we used it in the last section. Now, we will can to swtich between them.
+
+Lastly, we will implement exaxtly the same code as before, but now we are switching the GOT address. When the antivirus
+will check the malware, it will actually will check if it a directory, therefore will not find the virus.
