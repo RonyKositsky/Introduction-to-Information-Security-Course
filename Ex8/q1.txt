@@ -1,0 +1,5 @@
+a. We dowloaded the relevant packets as requested.
+
+b. We filter the packets which came from a server - TCP in port 80.
+
+c. We check if the packet came from the WEBSITE. If so, we filter the result using regular expression package to get the user and pass in the packet.

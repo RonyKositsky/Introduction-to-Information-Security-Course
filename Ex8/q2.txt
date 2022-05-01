@@ -1,0 +1,3 @@
+The code is running continues Ely and intercepting packets.
+If the packet is not relevant to us, we continue listening.
+Else, we redirect it with scapy with the flag to end the connection and with the response defined to us.

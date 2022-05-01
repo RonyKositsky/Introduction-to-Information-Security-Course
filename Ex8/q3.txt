@@ -1,0 +1,5 @@
+a. Comparing the gateway and checking if the source IP is different.
+
+b. Comparing the gateway and checking the IP. If it is different, then we can conclude it was poisoned.
+
+c. Sending the packet with the "fake" gateway, so he victim will think it is OK.
