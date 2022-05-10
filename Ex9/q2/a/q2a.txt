@@ -1,0 +1,3 @@
+We check whether the input packet is a TCP packet, and if so, checks its payload. 
+If the payload contains the substring "love" we block it.
+

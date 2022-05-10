@@ -1,0 +1,3 @@
+We check if a specific ip sent more than 15 SYN requests within 1 minute. However, it is possible to create SYN packets with any ip. 
+It means we can flood the victim with many SYN request from different fake IP addresses, as in DOS attack. 
+

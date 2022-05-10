@@ -1,0 +1,2 @@
+We create appropriate SYN-ACK response, by setting ack value with the flags of 'SA'.
+The SYN packet has fake resonse, so it make it appear as though all the ports open.

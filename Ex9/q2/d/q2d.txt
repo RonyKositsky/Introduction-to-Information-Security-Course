@@ -1,0 +1,19 @@
+Winston:
+- We convert the message in bytes.
+- We calculate the number of messages that we need to send.
+- We create the ith packet with the required attributes, where the seq is the index i, andhthe ack is the number of packets that calculated as metioned above. 
+- The reserved 3 bits is the last 3 bits of the global msg_int 
+- We shift right the msg_int 3 times (so we will take the next 3 bits in the next time).
+- We send the packets using sr function.
+
+
+Julia:
+
+- filter = "lo" to listen to local host.
+- prn = stealth. this function checks if the sprot is the SRC_PORT and if the flags are 'SA'. 
+- We extract the total message number from the ack field, the message index from the seq field, and the 3-bit message. 
+- We update the global variable.
+- stop_filter - Stop condition for the sniffing.
+
+
+

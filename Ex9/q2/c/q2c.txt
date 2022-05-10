@@ -1,0 +1,1 @@
+Our solution is pretty much the same as section a, but in addition we added a contidion that checks if the enropy is higher than 3.

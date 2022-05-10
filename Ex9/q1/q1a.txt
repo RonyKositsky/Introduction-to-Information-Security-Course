@@ -1,0 +1,13 @@
+generate_syn_packets: 
+We build packets with the given ip as destination, and with the given ports as destination ports in the TCP level.
+
+For each port we create a packet as follows: 
+- IP level is defined be the dest ip alone.
+- TCP level is defined by the dest port (one port from the port list) and the flag 'S' that means that this packet is a SYN packet. 
+
+analyze_scan: 
+- All the packet in the unanswered list are packets that were filtered. We add them with the value 'FILTERED'.
+- Else, we have 2 optional responses: 
+    1. The port is open so we've got a SYN-ACK response. The TCP flags would be set to 18 (SA) and we add them with the value 'OPEN'. 
+    2. We add them with the value 'CLOSED'. 
+

@@ -1,0 +1,7 @@
+- To block the ip we just return the sudo command to drop the given IP.
+
+on_packet:
+- We are keeping dictionary with all the timestamp of the IP(the log dictionary).
+- When new IP arrive, we add it to the ditionary.
+- If an IP has more then 15 attempts we know we need to block it.
+- If the latest time stamp is larger then the defined window, we drop it.

@@ -1,0 +1,10 @@
+Winston: 
+- Adds padding by using PKCS7 on 128 bits.
+- Encrypts the padded data by using AES with a random IV and the KEY.
+- Sending the IV at the begining of the message and than the encrypted padded data.
+
+Julia:
+- Extracts the IV which is not encrypted and its at the first 16 bytes.
+- Uses the KEY and the IV  to decrypt the rest of the payload. 
+- Uses the last byte to remove the padding.
+
