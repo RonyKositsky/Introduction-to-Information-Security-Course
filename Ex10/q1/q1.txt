@@ -1,0 +1,2 @@
+The run program uses the dictionary using the eval function.
+Instead of dictionary we putting cmd command which the eval function executing, and therefore printing the desired message.

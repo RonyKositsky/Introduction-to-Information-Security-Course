@@ -1,0 +1,4 @@
+We exploit the Pickle using the __reduce__() function(after reviewing the documentation).
+We implement our class the function __reduce__ that returns the function with the arguments that we'd like to execute, and then just pickle it and write it to the file. 
+
+

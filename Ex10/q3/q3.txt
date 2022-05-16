@@ -1,0 +1,10 @@
+The code compares the first n chars of the string, where 'n' is the index of the first ':', or the index where the username should end. 
+
+'n' can be determined by the user that gives the input, so we can just put an empty string and always return true.
+
+the same problem exists also in the password validation mechanism. 
+We return the string "::echo hacked" so it contains 2 times ":" so the credentials are valid. 
+
+
+
+

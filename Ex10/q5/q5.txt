@@ -1,0 +1,7 @@
+We use the fact that it takes time until the program opens the file until the validation actually happens.
+Until it happens, we change the file to the file with the command we desire. This way we are opening the file and still can run our code.
+
+We open a new file called and write to it the legal content.
+We create a child process which will use run program. The parent waits, and then changes the file to the command we want.  
+
+
